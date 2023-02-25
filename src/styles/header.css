@@ -1,0 +1,56 @@
+.header {
+  z-index: 10;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  background-color: #292524;
+  align-items: center;
+  justify-content: space-between;
+  color: #fafaf9;
+  font-weight: 300;
+}
+
+.header-section-left {
+  display: flex;
+  padding-left: 64px;
+  gap: 24px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.header-section-right {
+  display: flex;
+  align-items: center;
+  padding-right: 48px;
+  gap: 40px;
+  font-size: 20px;
+}
+
+.header-section-left svg, .header-section-right svg {
+  padding:10px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.header-section-left svg:hover, .header-section-right svg:hover {
+  background-color: rgba(255, 255, 255, 0.143);
+}
+
+.header__calender {
+  padding: 10px;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.header__calender:hover {
+  background-color: rgba(255, 255, 255, 0.143);
+  border-radius: 5px;
+}
+
+
+
+
