@@ -26,3 +26,4 @@ navigationProjects.addEventListener("click", ToggleProjects);
 
 const AddProjectButton = document.querySelector(".add-project");
 AddProjectButton.addEventListener("click", AskProjectName);
+
