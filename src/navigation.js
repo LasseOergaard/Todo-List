@@ -1,7 +1,9 @@
 import {RenderProjectPage } from "./projectBody.js";
+import { RenderTodos } from "./todoForm";
 
 var projectList = [];
 let projectTitle;
+var currentProject;
 /* Toggles */
 function ToggleNavigation() {
   const navigation = document.querySelector(".navigation")
@@ -35,7 +37,6 @@ class Project{
   }
 
   OpenProject() {
-    var currentProject;
     projectList.forEach(project => {
       if (project.title == this.innerText) {
         currentProject = project;
@@ -43,6 +44,7 @@ class Project{
     })
 
     RenderProjectPage(currentProject)
+    RenderTodos();
   }
 
   DeleteProject() {
@@ -150,4 +152,4 @@ function RenderProjects() {
   projectListDiv.appendChild(AddProjectButton)
 }
 
-export {ToggleNavigation, ToggleProjects, AskProjectName, projectList};
+export {ToggleNavigation, ToggleProjects, AskProjectName, projectList, currentProject};
