@@ -1,0 +1,37 @@
+.project-body {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  bottom: 0px;
+  transition-duration: 0.4s;
+  padding: 40px;
+}
+
+.project-body-small {
+  left: 300px;
+  transition-duration: 0.4s;
+}
+
+.project-body-large {
+  left: 0px;
+  transition-duration: 0.4s;
+}
+
+.project-body-title {
+  font-size: 28px;
+  margin-bottom: 24px;
+  padding-bottom: 1px;
+  border-bottom: 2px solid #292524;
+}
+
+.add-todo {
+  font-weight: 300;
+  display: inline;
+  padding: 6px;
+  cursor: pointer;
+  transition: all 0.1s;
+
+}
+.add-todo:hover {
+  background-color: #00000015;
+}

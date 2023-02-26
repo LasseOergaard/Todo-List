@@ -1,3 +1,5 @@
+import {RenderProjectPage } from "./projectBody.js";
+
 var projectList = [];
 let projectTitle;
 /* Toggles */
@@ -5,6 +7,12 @@ function ToggleNavigation() {
   const navigation = document.querySelector(".navigation")
   navigation.classList.toggle("navigation-active")
   navigation.classList.toggle("navigation-inactive")
+
+  const projectBody = document.querySelector(".project-body");
+  projectBody.classList.toggle("project-body-small")
+  projectBody.classList.toggle("project-body-large")
+
+  
 }
 
 function ToggleProjects() {
@@ -22,18 +30,26 @@ function ToggleProjects() {
 class Project{
   constructor(title) {
     this.title = title;
+    this.todoList = [];
+    this.id = Date.now();
   }
 
   OpenProject() {
-    return;
+    var currentProject;
+    projectList.forEach(project => {
+      if (project.title == this.innerText) {
+        currentProject = project;
+      }
+    })
+
+    RenderProjectPage(currentProject)
   }
 
   DeleteProject() {
     return;
   }
+
 }
-
-
  
 /* Functions */
 function AskProjectName() {
@@ -89,6 +105,11 @@ function AskProjectName() {
     askProjectNameButtonsSubmit.classList = "ask-project-name-buttons-submit";
     askProjectNameButtonsSubmit.innerText = "Add Project";
     askProjectNameButtonsSubmit.addEventListener("click", SubmitProject)
+    askProjectNameDiv.addEventListener("keypress", function(event) {
+      if(event.key === "Enter") {
+        SubmitProject()
+      }
+    })
     askProjectNameButtons.appendChild(askProjectNameButtonsSubmit);
 
   document.body.appendChild(askProjectNameDiv)
@@ -109,7 +130,6 @@ function SubmitProject() {
 
 function AddProjectToList() {
   projectList.push(new Project(projectTitle));
-  console.log(projectList);
   RenderProjects();
 }
 
@@ -121,6 +141,7 @@ function RenderProjects() {
 
   projectList.forEach(project => {
     let projectDiv = document.createElement("div");
+    projectDiv.addEventListener("click", project.OpenProject);
     projectDiv.classList = "project";
     projectDiv.innerText = project.title;    
     projectListDiv.appendChild(projectDiv);
@@ -128,9 +149,5 @@ function RenderProjects() {
 
   projectListDiv.appendChild(AddProjectButton)
 }
-
-
-
-
 
 export {ToggleNavigation, ToggleProjects, AskProjectName, projectList};
