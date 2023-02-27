@@ -9,6 +9,7 @@ import "./styles/general.css"
 import "./styles/navigation.css"
 import "./styles/todoForm.css"
 import "./styles/projectBody.css"
+import "./styles/todo.css"
 
 /* FONTS */
 import '@fortawesome/fontawesome-free/js/all'

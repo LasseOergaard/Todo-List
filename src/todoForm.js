@@ -105,6 +105,68 @@ function CreateTodoForm() {
     TodoButtonDiv.appendChild(TodoSubmitButton);
 }
 
+function CreateTodo(todoIndex) {
+
+  /* Todo Values */
+  let title = currentProject.todoList[todoIndex].title;
+  let description = currentProject.todoList[todoIndex].description;
+  let date = currentProject.todoList[todoIndex].date;
+  let priority = currentProject.todoList[todoIndex].priority;
+
+  /* General */
+  const projectBody = document.querySelector(".project-body")
+  const addTodoButton = document.querySelector(".add-todo")
+  const todoCheckbox = document.createElement("input")
+  todoCheckbox.type = "checkbox"
+
+  /* Todo */
+
+  let todo = document.createElement("div");
+  todo.classList = "todo";
+
+  let todoLeft = document.createElement("div");
+  todoLeft.classList = "todo-left";
+
+  let todoRight = document.createElement("div");
+  todoRight.classList =  "todo-right";
+
+  todoLeft.appendChild(todoCheckbox);
+  
+  let todoTitle = document.createElement("div")
+  todoTitle.classList = "todo-title"
+  todoTitle.innerText = title;
+  todoLeft.appendChild(todoTitle);
+
+  let todoDate = document.createElement("div")
+  todoDate.classList = "todo-date"
+  todoDate.innerText = date;
+  todoRight.appendChild(todoDate);
+
+  let todoEdit = document.createElement("div");
+  let editIcon = document.createElement("i")
+  editIcon.classList = "fa-regular fa-pen-to-square"
+  todoEdit.appendChild(editIcon);
+  todoRight.appendChild(todoEdit);
+
+  let todoDelete = document.createElement("div");
+  let deleteIcon = document.createElement("i")
+  deleteIcon.classList = "fa-solid fa-trash"
+  todoDelete.appendChild(deleteIcon);
+  todoRight.appendChild(todoDelete);
+  
+  let todoInfo = document.createElement("div");
+  let infoIcon = document.createElement("i")
+  infoIcon.classList = "fa-solid fa-circle-info"
+  todoInfo.appendChild(infoIcon);
+  todoRight.appendChild(todoInfo);
+
+
+
+  todo.appendChild(todoLeft);
+  todo.appendChild(todoRight);
+  projectBody.insertBefore(todo, addTodoButton);
+}
+
 function submitTodo() {
   const TodoDescriptionInput = document.querySelector(".todo-description-input")
   const TodoTitleInput = document.querySelector(".todo-title-input")
@@ -119,14 +181,8 @@ function RenderTodos() {
   const allTodos = document.querySelectorAll(".todo")
   allTodos.forEach(todo => {todo.remove()})
 
-  const projectBody = document.querySelector(".project-body")
-  const addTodoButton = document.querySelector(".add-todo")
-
   for (let i = 0; i < currentProject.todoList.length; i++) {
-    const todoDiv = document.createElement("div")
-    todoDiv.classList = "todo"
-    todoDiv.innerText = currentProject.todoList[i].title;
-    projectBody.insertBefore(todoDiv, addTodoButton);
+    CreateTodo(i)
   }
 }
 
