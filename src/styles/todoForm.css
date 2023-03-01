@@ -15,29 +15,29 @@
   padding: 10px;
 }
 
-.todo-title-div-top{
+.todo-form-title-div-top{
   display: flex;
   justify-content: space-between;
 }
 
-.todo-title-close {
+.todo-form-title-close {
   cursor: pointer;
   transition: all 0.1s;
 }
 
-.todo-title-close:hover {
+.todo-form-title-close:hover {
   cursor: pointer;
   color: #dc2626;
 }
 
-.todo-title {
+.todo-form-title {
   font-weight: 300;
   font-size: 18px;
   margin-bottom: 8px;
 }
 
 
-.todo-title-input {
+.todo-form-title-input {
   width: 97%;
   padding: 6px 0px 6px 10px;
   outline: none;
@@ -49,14 +49,14 @@
   background-color: #fafafa;
 }
 
-.todo-description {
+.todo-form-description {
   font-weight: 300;
   font-size: 18px;
   margin-bottom: 8px;
 }
 
 
-.todo-description-input {
+.todo-form-description-input {
   resize: none;
   width: 97%;
   padding: 6px 0px 6px 10px;
@@ -69,19 +69,19 @@
   background-color: #fafafa;
 }
 
-.todo-date-div {
+.todo-form-date-div {
   display: flex;
   justify-content: space-between;
   align-items: end;
 }
 
-.todo-date {
+.todo-form-date {
   font-weight: 300;
   font-size: 18px;
   margin-bottom: 8px;
 }
 
-.todo-date-input {
+.todo-form-date-input {
   width: 301px;
   padding: 6px 0px 6px 10px;
   outline: none;
@@ -97,13 +97,13 @@
 
 
 
-.todo-buttons-div{
+.todo-form-buttons-div{
   display: flex;
   justify-content: right;
   gap: 6px;
 }
 
-.todo-submit-button {
+.todo-form-submit-button {
   border:2px solid #15803d;
   border-radius: 4px;
   background-color: #15803d;
@@ -115,12 +115,12 @@
   cursor: pointer;
   transition: all 0.1s;
 }
-.todo-submit-button:hover {
+.todo-form-submit-button:hover {
   background-color: #117034;
   border: 2px solid #117034;
 }
 
-.todo-close-button {
+.todo-form-close-button {
   border:2px solid #fafafa;
   border-radius: 4px;
   background-color: transparent;
@@ -133,7 +133,7 @@
   transition: all 0.1s;
 }
 
-.todo-close-button:hover {
+.todo-form-close-button:hover {
   color: #292524;
   background-color: #fafafa;
   font-weight: 400;

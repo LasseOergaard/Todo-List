@@ -40,8 +40,40 @@
   transition: all 0.1s;
 }
 
+.project {
+  display: flex;
+  width: 129.375px;
+  margin-bottom: 4px;
+  transition: all 0.1s;
+}
+
+.project-navigation-title {
+  flex:1;
+  cursor: pointer;
+  padding: 6px 12px 6px 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-delete {
+  font-size: 14px;
+  display: none;
+  cursor: pointer;
+  padding: 6px 6px 6px 0;
+}
+
+.add-project {
+  padding: 6px 12px 6px 6px;
+  cursor: pointer;
+}
+
 .navigation__option:hover, .add-project:hover, .project:hover {
   background-color: #00000015;
+}
+
+.project:hover .project-delete {
+  display: inline-block;
 }
 
 .navigation__option p {
@@ -77,14 +109,7 @@
   overflow: hidden;
 }
 
-.add-project, .project {
-  padding: 6px 12px 6px 6px;
-  cursor: pointer;
-}
 
-.project {
-  margin-bottom: 4px;
-}
 
 .ask-project-name-div {
   z-index: 100;

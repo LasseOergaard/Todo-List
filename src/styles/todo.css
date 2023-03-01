@@ -1,12 +1,61 @@
 .todo {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .todo-left {
   display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  /* Style the box. */
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #292524;
+}
+input[type="checkbox"]:checked {
+  position: relative;
+  background: none;
+}
+
+input:checked::after {
+  position: absolute;
+  top: 0.28rem; 
+  left:0.18rem;      
+  content: "";
+  width: 0.4rem;
+  height: 0.17rem;
+  border: 2px solid #292524;
+  border-right: none;
+  border-top: none;
+  transform: rotate(-45deg);
+}
+
+
+.todo-title {
+  font-size: 20px;
 }
 
 .todo-right {
   display: flex;
+  align-items: center;
+  gap: 12px;
+
+}
+
+.todo-edit, .todo-delete, .todo-info {
+  color: #292524;
+  cursor: pointer;
+  transition: all 0.05s; 
+  padding: 6px;
+}
+
+.todo-edit:hover, .todo-delete:hover, .todo-info:hover {
+  background-color: #00000015;
+  border-radius: 100px;
 }
